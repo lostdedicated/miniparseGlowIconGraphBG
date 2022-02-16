@@ -3,6 +3,17 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<style>
+			/*
+			@font-face {
+    			font-family: Axis;
+    			src: url("ax.otf") format("opentype");
+			}
+
+			* {
+				font-family: "Axis";
+				font-size: 10px;
+			}
+			*/
 			* {
 				font-family: "Meiryo";
 				font-size: 11px;
@@ -11,6 +22,7 @@
 			body,
 			html {
 				margin: 0;
+				overflow: hidden;
 			}
 
 			#container {
@@ -69,6 +81,12 @@
 			td:last-child {
 				padding-right: 3px !important;
 			}
+			
+			/*
+			#combatantTableBody tr:nth-child(n + 10) {
+				display: none;
+			}
+			*/
 
 			#combatantTableBody tr:nth-child(2n + 1) {
 				background-color: rgba(0, 0, 0, 0.2);
@@ -147,7 +165,7 @@
 
 			.enc {
 				color: #e2ebf5;
-				text-shadow: -1px 0 3px #217aa2, 0 1px 3px #217aa2, 1px 0 3px #217aa2,
+				text-shadow: -1px 0 3px #217aa2, 0 1px 3px #217aa2, 1px 0 3px #217aa2, 
 					0 -1px 3px #217aa2;
 				font-weight: 300;
 
@@ -194,7 +212,7 @@
 
 			// エンカウント情報の定義
 			var encounterDefine =
-				"Time:<span class='enc'>{duration}</span> &nbsp;&nbsp;&nbsp;Total DPS:<span class='enc'>{dps}</span>";
+				"Time: <span class='enc'>{duration}</span> &nbsp;&nbsp;&nbsp;Total DPS: <span class='enc'>{dps}</span>";
 
 			// 上記のエンカウント情報を HTML として扱うなら true
 			var useHTMLEncounterDefine = true;
