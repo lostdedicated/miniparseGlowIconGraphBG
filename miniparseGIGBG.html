@@ -232,7 +232,7 @@
 			var bodyDefine = [
 				{
 					html:
-						"<img src='./images/glow2/{JobOrName}.png' onerror='$(this).attr(\"src\", \"./images/error.png\");' style='width=16;height:16;' />",
+						"<img src='./images/glow2/{JobOrName}.png' onerror='$(this).attr(\"src\", \"./images/glow2/error.png\");' style='width=16;height:16;' />",
 					align: "center",
 					effect: dpsBarEffect,
 				},
@@ -270,30 +270,30 @@
 				$(cell).addClass("graphCell");
 			}
 
-			function dpsBarEffect(cell, combatant, index) {
-				var tank = ["Gld", "Gla", "Pld", "Mrd", "War", "Drk", "Gnb"];
-				var dps = [
-					"Pgl",
-					"Mnk",
-					"Lnc",
-					"Drg",
-					"Arc",
-					"Brd",
-					"Rog",
-					"Nin",
-					"Acn",
-					"Smn",
-					"Thm",
-					"Blm",
-					"Mch",
-					"Sam",
-					"Rdm",
-					"Rpr",
-					"Blu",
-					"Dnc",
-				];
-				var healer = ["Cnj", "Whm", "Sch", "Ast", "Sge"];
+			var tank = ["Gld", "Gla", "Pld", "Mrd", "War", "Drk", "Gnb"];
+			var dps = [
+				"Pgl",
+				"Mnk",
+				"Lnc",
+				"Drg",
+				"Arc",
+				"Brd",
+				"Rog",
+				"Nin",
+				"Acn",
+				"Smn",
+				"Thm",
+				"Blm",
+				"Mch",
+				"Sam",
+				"Rdm",
+				"Rpr",
+				"Blu",
+				"Dnc",
+			];
+			var healer = ["Cnj", "Whm", "Sch", "Ast", "Sge"];
 
+			function dpsBarEffect(cell, combatant, index) {
 				if (index == 0 || typeof dpsBarEffect.topdeeps == "undefined") {
 					dpsBarEffect.topdeeps = combatant["encdps"];
 				}
@@ -468,6 +468,8 @@
 						// currently no carbuncle pics
 					} else if (combatant.JobOrName.indexOf(" (") != -1) {
 						combatant.JobOrName = "choco";
+					} else if ((healer.indexOf(combatant["Job"]) == -1) && (dps.indexOf(combatant["Job"]) == -1) && (tank.indexOf(combatant["Job"]) == -1)){
+						combatant.JobOrName = "error";
 					}
 
 					var tableRow = newTableBody.insertRow(newTableBody.rows.length);
