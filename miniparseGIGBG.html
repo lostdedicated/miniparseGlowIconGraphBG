@@ -468,6 +468,8 @@
 						// currently no carbuncle pics
 					} else if (combatant.JobOrName.indexOf(" (") != -1) {
 						combatant.JobOrName = "choco";
+					} else if (combatant.JobOrName.indexOf("Limit Break") != -1) {
+						combatant.JobOrName = "limit break";
 					} else if ((healer.indexOf(combatant["Job"]) == -1) && (dps.indexOf(combatant["Job"]) == -1) && (tank.indexOf(combatant["Job"]) == -1)){
 						combatant.JobOrName = "error";
 					}
