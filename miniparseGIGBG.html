@@ -467,11 +467,11 @@
 					} else if (combatant.JobOrName.indexOf("Carbuncle (") != -1) {
 						// currently no carbuncle pics
 					} else if (combatant.JobOrName.indexOf(" (") != -1) {
-						combatant.JobOrName = "choco";
+						combatant.JobOrName = "Choco";
 					} else if (combatant.JobOrName.indexOf("Limit Break") != -1) {
-						combatant.JobOrName = "limit break";
+						combatant.JobOrName = "Limitbreak";
 					} else if ((healer.indexOf(combatant["Job"]) == -1) && (dps.indexOf(combatant["Job"]) == -1) && (tank.indexOf(combatant["Job"]) == -1)){
-						combatant.JobOrName = "error";
+						combatant.JobOrName = "Error";
 					}
 
 					var tableRow = newTableBody.insertRow(newTableBody.rows.length);
